@@ -5,17 +5,18 @@ export default function Join(){
   const form = useRef()
     const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
-      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-        publicKey: 'YOUR_PUBLIC_KEY',
+      .sendForm('service_6x1fb09', 'template_ds2cvou', form.current, {
+        publicKey: 'weytg9l8gmCmCmVPf',
       })
       .then(
         () => {
           console.log('SUCCESS!');
         },
         (error) => {
+
           console.log('FAILED...', error.text);
+          // console.log("can not do that ")
         },
       );
   };
@@ -35,7 +36,7 @@ export default function Join(){
       </div>
       <div className="right-j">
         <form ref={form} onSubmit={sendEmail}  className="email-container">
-          <input type="email" name="user_email" placeholder="Enter your email"/>
+          <input type="email" name="user_email" placeholder="Enter your Email Address"/>
           <button className="btn  btn-j">Join Now </button>
         </form>
       </div>
