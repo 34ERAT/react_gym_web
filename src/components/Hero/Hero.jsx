@@ -6,10 +6,10 @@ import hero_image_back from '../../assets/hero_image_back.png'
 import Heart from '../../assets/heart.png'
 import Colaries from '../../assets/calories.png'
 import { motion } from "framer-motion";
-import {type} from "@testing-library/user-event/dist/type";
 
 export default function Hero(){
-  const transition = {type:'spring',duration:3}
+  const transition = {type:'spring',duration:3};
+  const mobile = window.innerWidth<=768 ? true:false;
   return (
     <div className="hero">
       <div className="blur hero-blur"></div>
@@ -18,7 +18,7 @@ export default function Hero(){
         {/*the besst ad*/}
         <div className="the-best-ad">
           <motion.div
-            initial={{ left: "238px" }}
+            initial={{ left:mobile? "178px":"238px" }}
             whileInView={{ left: "8px" }}
             transition={{ ...transition, type: "tween" }}
           ></motion.div>
@@ -56,7 +56,7 @@ export default function Hero(){
           </div>
         </div>
         {/* buttons */}
-        <div className="hero-button">
+        <div className="hero-buttons">
           <button className="btn">Get Started</button>
           <button className="btn">Learn More</button>
         </div>
